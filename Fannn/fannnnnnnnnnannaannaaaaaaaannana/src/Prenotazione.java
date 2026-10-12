@@ -13,7 +13,7 @@ public class Prenotazione {
         this.prenriusicte = new AtomicInteger(0);
     }
 
-    public boolean prenota(){
+    public synchronized boolean prenota(){
         postirichiesti.incrementAndGet();
         if(postirichiesti.get() < posti){
             prenriusicte.incrementAndGet();
